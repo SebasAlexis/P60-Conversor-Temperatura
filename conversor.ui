@@ -10,6 +10,13 @@
     <height>334</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Uroob</family>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Conversor</string>
   </property>
@@ -18,7 +25,7 @@
     <widget class="QGroupBox" name="groupBox">
      <property name="font">
       <font>
-       <family>Ubuntu Condensed</family>
+       <family>DejaVu Sans</family>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -43,18 +50,22 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(138, 226, 52);
-color: rgb(46, 52, 54);
-background-color: rgb(46, 52, 54);
-background-color: rgb(238, 238, 236);</string>
+         <string notr="true">background-color: rgb(46, 52, 54);
+color: rgb(115, 210, 22);</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QDial" name="inCent">
+        <property name="cursor">
+         <cursorShape>OpenHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(245, 121, 0);
 background-color: rgb(136, 138, 133);</string>
+        </property>
+        <property name="minimum">
+         <number>-18</number>
         </property>
        </widget>
       </item>
@@ -65,7 +76,7 @@ background-color: rgb(136, 138, 133);</string>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="font">
       <font>
-       <family>Ubuntu Condensed</family>
+       <family>DejaVu Sans</family>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -91,7 +102,9 @@ background-color: rgb(239, 41, 41);</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(238, 238, 236);</string>
+         <string notr="true">background-color: rgb(238, 238, 236);
+color: rgb(115, 210, 22);
+background-color: rgb(46, 52, 54);</string>
         </property>
        </widget>
       </item>
@@ -99,6 +112,9 @@ background-color: rgb(239, 41, 41);</string>
        <widget class="QDial" name="inFahr">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(136, 138, 133);</string>
+        </property>
+        <property name="maximum">
+         <number>210</number>
         </property>
        </widget>
       </item>
@@ -108,5 +124,38 @@ background-color: rgb(239, 41, 41);</string>
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>inCent</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outCent</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>118</x>
+     <y>246</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>118</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inFahr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outFahr</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>342</x>
+     <y>246</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>342</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
